@@ -1,0 +1,180 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Pizza Hub",
+   LoadingTitle = "Subscribe to zenoXD sh",
+   LoadingSubtitle = "by ZenoXD sh",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "https://discord.com/invite/RMvCHJrJ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Pizza Hub key system",
+      Subtitle = "Key System",
+      Note = "Key: Pizzabesthub",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Pizzabesthub"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+Rayfield:Notify({
+   Title = "Notification",
+   Content = "Succes Loaded Example Hub",
+   Duration = 3.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Tab1 = Window:CreateTab("Credit", 4483362458) -- Title, Image
+
+local Label = Tab1:CreateLabel("Mabe by zenoXD sh")
+local Paragraph = Tab1:CreateParagraph({Title = "Paragraph", Content = "Made by zenoXD sh"})
+
+local Tab2 = Window:CreateTab("Others", 4483362458) -- Title, Image
+
+local Input = Tab2:CreateInput({
+   Name = "WalkSpeed",
+   PlaceholderText = "Input a Number from 1-999999999",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(v)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+   end,
+})
+
+local Input = Tab2:CreateInput({
+   Name = "JumpPower",
+   PlaceholderText = "Input a Number from 1-999999999",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(v)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Infinite Jump",
+   Callback = function()
+   local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Fly",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Noclip",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Invisible",
+   Callback = function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Rejoin Server",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Server Hop",
+   Callback = function()
+   local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+module:Teleport(game.PlaceId)
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Server Finder",
+   Callback = function()
+   loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
+   end,
+})
+
+local Tab3 = Window:CreateTab("Admin Commands", 4483362458) -- Title, Image
+
+local Button = Tab3:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "NamelessAdmin",
+   Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Fate Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Orca Admin",
+   Callback = function()
+   loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "CMD-X Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Brick Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/un_AdminGUI", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Reviz Admin",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/pyzjWNhk'),true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "ShatterVast Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Git-art-byte/ShatterVast-Admin/main/ShatterVast%20Admin"))()
+   end,
+})
